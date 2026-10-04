@@ -19,6 +19,7 @@
       --rust: #87573e;
       --navy: #1d2944;
       --gold: #bd9148;
+      --display: "Baskerville", "Palatino Linotype", "Book Antiqua", Georgia, serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -50,8 +51,10 @@
     h1 {
       max-width: 760px;
       margin: 0;
+      font-family: var(--display);
+      font-weight: 600;
       font-size: clamp(34px, 5vw, 58px);
-      letter-spacing: -.055em;
+      letter-spacing: -.035em;
       line-height: 1.04;
     }
     .intro-copy { max-width: 760px; margin: 20px 0 0; color: #41473f; font-size: 17px; line-height: 1.48; }
@@ -81,7 +84,7 @@
       line-height: 1.35;
     }
     h2, h3, p { margin-top: 0; }
-    .about h2 { margin: 0 0 16px; font-size: 18px; }
+    .about h2 { margin: 0 0 16px; font-family: var(--display); font-size: 20px; font-weight: 600; }
     .about p { max-width: 740px; margin: 0 0 12px; color: #454a42; line-height: 1.55; }
     .bio-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 40px; margin-top: 22px; }
     .detail-label { display: block; margin-bottom: 3px; color: var(--muted); font-size: 12px; }
@@ -90,7 +93,7 @@
     .motto-caption { display: block; margin-top: 4px; color: var(--muted); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; }
     .section { padding: 36px 0; }
     .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; }
-    .section-heading h2 { margin: 0; font-size: 18px; }
+    .section-heading h2 { margin: 0; font-family: var(--display); font-size: 20px; font-weight: 600; }
     .section-heading span { color: var(--muted); font-size: 13px; }
     .pillar { border: 1px solid var(--ink); }
     .pillar-card { padding: 19px 22px 18px; }
@@ -98,7 +101,7 @@
     .square { width: 9px; height: 9px; margin-bottom: 10px; background: var(--forest); }
     .pillar-card:nth-child(2) .square { background: var(--teal); }
     .pillar-card:nth-child(3) .square { background: var(--rust); }
-    .pillar-card h3 { margin: 0 0 6px; font-size: 16px; }
+    .pillar-card h3 { margin: 0 0 6px; font-family: var(--display); font-size: 17px; font-weight: 600; }
     .pillar-card > p { max-width: 780px; margin: 0 0 13px; color: var(--muted); font-size: 14px; line-height: 1.5; }
     .project { padding: 11px 0 0; border-top: 1px solid var(--rule); }
     .project + .project { margin-top: 11px; }
@@ -117,7 +120,7 @@
     .books { padding: 38px 0 44px; color: #f7f4ed; background: var(--navy); }
     .books .wrap { max-width: 1100px; }
     .eyebrow { margin: 0 0 6px; color: var(--gold); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
-    .books h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(28px, 4vw, 38px); font-style: italic; font-weight: 400; }
+    .books h2 { margin: 0; font-family: var(--display); font-size: clamp(28px, 4vw, 38px); font-style: italic; font-weight: 400; }
     .books-intro { margin: 18px 0 20px; color: #d2cfca; font-family: Georgia, serif; font-size: 17px; font-style: italic; }
     .book-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px 0; }
     .book { min-width: 0; padding: 0 12px; border-left: 1px solid var(--gold); }
@@ -153,7 +156,7 @@
       .button { margin-top: 20px; padding: 10px 15px; font-size: 12px; }
       .about { padding: 39px 0 31px; }
       .portrait { width: 125px; height: 40px; padding: 6px; font-size: 9px; }
-      .about h2 { margin-bottom: 15px; font-size: 14px; }
+      .about h2 { margin-bottom: 15px; font-size: 15px; }
       .about p { margin-bottom: 10px; font-size: 13px; line-height: 1.48; }
       .bio-details { grid-template-columns: 1fr; gap: 10px; margin-top: 17px; }
       .detail-label { margin-bottom: 1px; font-size: 10px; }
@@ -162,11 +165,11 @@
       .motto-caption { font-size: 10px; }
       .section { padding: 34px 0; }
       .section-heading { margin-bottom: 12px; }
-      .section-heading h2 { font-size: 12px; }
+      .section-heading h2 { font-size: 13px; }
       .section-heading span { font-size: 10px; }
       .pillar-card { padding: 16px 13px 14px; }
       .square { width: 8px; height: 8px; margin-bottom: 9px; }
-      .pillar-card h3 { margin-bottom: 5px; font-size: 12px; }
+      .pillar-card h3 { margin-bottom: 5px; font-size: 13px; }
       .pillar-card > p { margin-bottom: 11px; font-size: 11px; line-height: 1.45; }
       .project { padding-top: 10px; }
       .project + .project { margin-top: 9px; }
