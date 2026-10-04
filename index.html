@@ -4,293 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f4f4ef" />
-  <meta name="description" content="Notes on sustainable livelihoods, inclusive finance, and social enterprise by Jane Siregar." />
-  <title>Selanotes — Jane Siregar</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #fff;
-      --soft: #f1f1ec;
-      --ink: #20251f;
-      --muted: #64695e;
-      --rule: #d4d5ce;
-      --forest: #315d48;
-      --teal: #32766f;
-      --rust: #87573e;
-      --navy: #1d2944;
-      --gold: #bd9148;
-      --display: "Baskerville", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; }
-    .wrap { width: min(100% - 48px, 1100px); margin-inline: auto; }
-    header {
-      min-height: 108px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 28px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .brand { display: inline-flex; width: 160px; align-items: center; line-height: 0; }
-    .brand img { display: block; width: 100%; height: auto; }
-    nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
-    nav a { font-size: 14px; text-decoration: none; }
-    nav a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 3px; }
-    .intro { padding: 48px 0 42px; border-bottom: 1px solid var(--rule); }
-    .location { margin: 0 0 14px; color: var(--muted); font-size: 13px; letter-spacing: .015em; }
-    h1 {
-      max-width: 760px;
-      margin: 0;
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: clamp(34px, 5vw, 58px);
-      letter-spacing: -.035em;
-      line-height: 1.04;
-    }
-    .intro-copy { max-width: 760px; margin: 20px 0 0; color: #41473f; font-size: 17px; line-height: 1.48; }
-    .role { max-width: 760px; margin: 10px 0 0; color: var(--muted); font-size: 15px; line-height: 1.4; }
-    .button {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 12px 17px;
-      color: #fff;
-      background: var(--ink);
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .button:hover { background: #3d493e; }
-    .about { padding: 38px 0 36px; border-bottom: 1px solid var(--rule); }
-    .portrait {
-      display: flex;
-      width: 164px;
-      height: 74px;
-      align-items: center;
-      padding: 10px;
-      background: #efefeb;
-      border: 1px solid #d7d8d1;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-    h2, h3, p { margin-top: 0; }
-    .about h2 { margin: 0 0 16px; font-family: var(--display); font-size: 20px; font-weight: 600; }
-    .about p { max-width: 740px; margin: 0 0 12px; color: #454a42; line-height: 1.55; }
-    .bio-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 40px; margin-top: 22px; }
-    .detail-label { display: block; margin-bottom: 3px; color: var(--muted); font-size: 12px; }
-    .detail-value { font-size: 14px; line-height: 1.45; }
-    .motto { margin: 20px 0 0; color: #835a43; font-family: Georgia, serif; font-size: 17px; font-style: italic; }
-    .motto-caption { display: block; margin-top: 4px; color: var(--muted); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; }
-    .section { padding: 36px 0; }
-    .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; }
-    .section-heading h2 { margin: 0; font-family: var(--display); font-size: 20px; font-weight: 600; }
-    .section-heading span { color: var(--muted); font-size: 13px; }
-    .pillar { border: 1px solid var(--ink); }
-    .pillar-card { padding: 19px 22px 18px; }
-    .pillar-card + .pillar-card { border-top: 1px solid var(--ink); }
-    .square { width: 9px; height: 9px; margin-bottom: 10px; background: var(--forest); }
-    .pillar-card:nth-child(2) .square { background: var(--teal); }
-    .pillar-card:nth-child(3) .square { background: var(--rust); }
-    .pillar-card h3 { margin: 0 0 6px; font-family: var(--display); font-size: 17px; font-weight: 600; }
-    .pillar-card > p { max-width: 780px; margin: 0 0 13px; color: var(--muted); font-size: 14px; line-height: 1.5; }
-    .project { padding: 11px 0 0; border-top: 1px solid var(--rule); }
-    .project + .project { margin-top: 11px; }
-    .project strong { display: block; font-size: 14px; }
-    .project span { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; line-height: 1.35; }
-    .project a { display: inline-block; margin-top: 5px; font-size: 13px; font-weight: 700; text-decoration: none; }
-    .notes { padding: 36px 0; background: var(--soft); }
-    .notes-inner { width: min(100% - 48px, 1100px); margin: auto; }
-    .note-group { margin-top: 20px; }
-    .note-group:first-of-type { margin-top: 0; }
-    .note-group h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 4px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .035em; text-transform: uppercase; }
-    .note-group h3 .square { flex: 0 0 auto; margin: 0; }
-    .note-list { margin: 0; padding: 0; list-style: none; }
-    .note-list li { padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; line-height: 1.35; }
-    .note-list li:last-child { border-bottom: 0; }
-    .books { padding: 38px 0 44px; color: #f7f4ed; background: var(--navy); }
-    .books .wrap { max-width: 1100px; }
-    .eyebrow { margin: 0 0 6px; color: var(--gold); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
-    .books h2 { margin: 0; font-family: var(--display); font-size: clamp(28px, 4vw, 38px); font-style: italic; font-weight: 400; }
-    .books-intro { margin: 18px 0 20px; color: #d2cfca; font-family: Georgia, serif; font-size: 17px; font-style: italic; }
-    .book-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px 0; }
-    .book { min-width: 0; padding: 0 12px; border-left: 1px solid var(--gold); }
-    .book:nth-child(4n + 1) { padding-left: 0; border-left: 0; }
-    .book-title {
-      display: flex;
-      min-height: 56px;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 7px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: Georgia, serif;
-      font-size: 15px;
-      font-style: italic;
-      line-height: 1.15;
-      text-align: center;
-      text-decoration: none;
-    }
-    .book p { margin: 7px 0 0; color: #d2cfca; font-size: 12px; line-height: 1.4; }
-    footer { display: flex; justify-content: space-between; gap: 20px; padding: 20px 0 24px; color: var(--muted); font-size: 13px; }
-    @media (max-width: 600px) {
-      .wrap, .notes-inner { width: calc(100% - 26px); }
-      header { min-height: 109px; display: block; padding: 49px 0 12px; }
-      .brand { width: 124px; }
-      nav { gap: 6px; margin-top: 3px; }
-      nav a { font-size: 12px; }
-      .intro { padding: 44px 0 34px; }
-      .location { margin-bottom: 12px; font-size: 11px; }
-      h1 { max-width: 360px; font-size: 34px; line-height: 1.08; }
-      .intro-copy { margin-top: 16px; font-size: 13px; line-height: 1.46; }
-      .role { margin-top: 9px; font-size: 12px; line-height: 1.35; }
-      .button { margin-top: 20px; padding: 10px 15px; font-size: 12px; }
-      .about { padding: 39px 0 31px; }
-      .portrait { width: 125px; height: 40px; padding: 6px; font-size: 9px; }
-      .about h2 { margin-bottom: 15px; font-size: 15px; }
-      .about p { margin-bottom: 10px; font-size: 13px; line-height: 1.48; }
-      .bio-details { grid-template-columns: 1fr; gap: 10px; margin-top: 17px; }
-      .detail-label { margin-bottom: 1px; font-size: 10px; }
-      .detail-value { font-size: 11px; line-height: 1.35; }
-      .motto { margin-top: 15px; font-size: 14px; }
-      .motto-caption { font-size: 10px; }
-      .section { padding: 34px 0; }
-      .section-heading { margin-bottom: 12px; }
-      .section-heading h2 { font-size: 13px; }
-      .section-heading span { font-size: 10px; }
-      .pillar-card { padding: 16px 13px 14px; }
-      .square { width: 8px; height: 8px; margin-bottom: 9px; }
-      .pillar-card h3 { margin-bottom: 5px; font-size: 13px; }
-      .pillar-card > p { margin-bottom: 11px; font-size: 11px; line-height: 1.45; }
-      .project { padding-top: 10px; }
-      .project + .project { margin-top: 9px; }
-      .project strong { font-size: 11px; }
-      .project span, .project a { font-size: 10px; }
-      .notes { padding: 35px 0 30px; }
-      .note-group { margin-top: 19px; }
-      .note-group h3 { font-size: 10px; }
-      .note-group h3 .square { margin: 0; }
-      .note-list li { padding: 9px 0; font-size: 11px; }
-      .books { padding: 38px 0 41px; }
-      .eyebrow { font-size: 9px; }
-      .books h2 { font-size: 22px; }
-      .books-intro { margin: 17px 0 18px; font-size: 13px; }
-      .book-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 0; }
-      .book { padding: 0 4px; }
-      .book:nth-child(4n + 1) { padding-left: 0; }
-      .book-title { min-height: 46px; padding: 5px 2px; font-size: 12px; }
-      .book p { margin-top: 6px; font-size: 9px; line-height: 1.35; }
-      footer { padding: 18px 0; font-size: 10px; }
-    }
-    @media (max-width: 340px) {
-      .wrap, .notes-inner { width: calc(100% - 20px); }
-      nav { gap: 5px; }
-      nav a { font-size: 11px; }
-      h1 { font-size: 31px; }
-      .book p { font-size: 8px; }
-    }
-  </style>
+  <meta name="description" content="Selanotes — ideas and work by Vitra Janne Siregar." />
+  <title>Selanotes — Vitra Janne Siregar</title>
+  <link rel="stylesheet" href="site.css" />
 </head>
 <body>
-  <header class="wrap" id="top">
-    <a class="brand" href="#top" aria-label="Selanotes home"><img src="assets/selanotes-logo.png" width="900" height="221" alt="Selanotes" /></a>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html" aria-label="Selanotes home"><img src="assets/selanotes-logo.png" width="900" height="221" alt="Selanotes" /></a>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#what-i-do">What I do</a>
-      <a href="#notes">Notes</a>
-      <a href="#books">Books</a>
-      <a href="#contact">Contact</a>
+      <a href="about.html">About</a><a href="work.html">What I do</a><a href="notes.html">Notes</a><a href="books.html">Books</a><a href="contact.html">Contact</a>
     </nav>
   </header>
   <main>
-    <section class="intro wrap" aria-labelledby="intro-title">
-      <p class="location">6.5971°S, 106.8060° E — Bogor, West Java</p>
+    <section class="home-intro wrap" aria-labelledby="intro-title">
+      <p class="location">6.5971°S, 106.8060°E — Bogor, West Java</p>
       <h1 id="intro-title">I make the way for those the system leaves behind.</h1>
-      <p class="intro-copy">I'm Janne Siregar. For two decades I've built inclusive economic systems around natural-resource value chains and underserved communities — and proven that social purpose can be financially self-sustaining, not donor-dependent.</p>
+      <p class="page-intro">I'm Janne Siregar. For two decades I've built inclusive economic systems around natural-resource value chains and underserved communities — and proven that social purpose can be financially self-sustaining, not donor-dependent.</p>
       <p class="role">Sustainable Commodity Lead, Tropical Forest Alliance Southeast Asia — World Economic Forum</p>
-      <a class="button" href="#notes">Read the latest note →</a>
+      <a class="button" href="notes.html">Read the latest notes →</a>
     </section>
-    <section class="about wrap" id="about" aria-labelledby="about-title">
-      <div class="portrait" role="img" aria-label="Portrait placeholder — Janne, Bogor">Portrait placeholder —<br />Janne, Bogor</div>
-      <h2 id="about-title">About</h2>
-      <p>I'm Vitra Janne Siregar — most people call me Janne. For more than two decades I've worked across Indonesia and Southeast Asia at the intersection of sustainable supply chains, forest conservation, trade and market access, rural livelihoods, and social inclusion.</p>
-      <p>I currently lead the regional technical implementation of the Tropical Forest Alliance strategy for the World Economic Forum, translating international sustainability requirements into practice that smallholders and subnational governments can actually work with. Alongside that, I design and run small enterprises in education, animal welfare, and community finance — built on the same conviction: that social purpose should be able to pay for itself.</p>
-      <p>Selanotes is named for my grandmother, Sela. It's where the policy work, the enterprises, and the writing that comes out of both live in one place.</p>
-      <div class="bio-details">
-        <div><span class="detail-label">Based in</span><div class="detail-value">Bogor, West Java, Indonesia</div></div>
-        <div><span class="detail-label">Languages</span><div class="detail-value">Indonesian (native), English (fluent)</div></div>
-        <div><span class="detail-label">Education</span><div class="detail-value">MA International Social Policy, University of Nottingham — Open Society Foundation scholarship</div></div>
-        <div><span class="detail-label">Also</span><div class="detail-value">Hansard Scholars Programme, London School of Economics</div></div>
-      </div>
-      <p class="motto">"Viam facio; aliis prospicio."<span class="motto-caption">I make my own way; on wings, I look ahead.</span></p>
-    </section>
-    <section class="section wrap" id="what-i-do" aria-labelledby="pillars-title">
-      <div class="section-heading"><h2 id="pillars-title">What I do</h2><span>03 pillars</span></div>
-      <div class="pillar">
-        <article class="pillar-card">
-          <div class="square"></div><h3>Sustainable commodity systems</h3>
-          <p>Jurisdictional approaches and EUDR compliance across palm oil, timber, rubber, and cacao — turning global standards into workable local practice.</p>
-          <div class="project"><strong>Tropical Forest Alliance — World Economic Forum</strong><span>Sustainable Commodity Lead, SE Asia · 2018–present</span></div>
-          <div class="project"><strong>Muara Impact Advisory</strong><span>legality &amp; spatial assurance consultancy · opening 2027</span></div>
-        </article>
-        <article class="pillar-card">
-          <div class="square"></div><h3>Inclusive finance &amp; livelihoods</h3>
-          <p>Credit-readiness, savings groups, and market access for smallholders and women's groups, now extending into agroforestry coffee.</p>
-          <div class="project"><strong>Sangga Lentera Abadi</strong><span>credit-readiness &amp; market linkage, women's farmer groups</span><a href="#contact" class="text-link">Bring a training to your community →</a></div>
-          <div class="project"><strong>Bogor–Puncak coffee value chain</strong><span>agroforestry &amp; women's financial inclusion · in development</span></div>
-        </article>
-        <article class="pillar-card">
-          <div class="square"></div><h3>Social enterprise design</h3>
-          <p>Proving that social purpose can pay for itself — applied to animal welfare, education, and wellness.</p>
-          <div class="project"><strong>Casa de Luna</strong><span>feline welfare sanctuary, Bogor</span><a href="#contact" class="text-link">Sponsor a cat's care →</a></div>
-          <div class="project"><strong>Alfa Beta Education</strong><span>community learning centre, Curug</span><a href="#contact" class="text-link">Enroll your child →</a></div>
-          <div class="project"><strong>The Remedy Home Spa</strong><span>mobile wellness enterprise, Bali</span></div>
-        </article>
-      </div>
-    </section>
-    <section class="notes" id="notes" aria-labelledby="notes-title">
-      <div class="notes-inner">
-        <div class="section-heading"><h2 id="notes-title">Notes in progress</h2><span>writing ideas, grouped by pillar</span></div>
-        <div class="note-group">
-          <h3><i class="square"></i>Sustainable commodity systems</h3>
-          <ul class="note-list"><li>What "jurisdictional approach" actually means to a smallholder</li><li>Inside a Jurisdictional Collaborative Action Forum</li><li>EUDR, from the Indonesian side</li><li>Why I'm launching Muara</li></ul>
-        </div>
-        <div class="note-group">
-          <h3><i class="square" style="background:var(--teal)"></i>Inclusive finance &amp; livelihoods</h3>
-          <ul class="note-list"><li>What happens after the loan</li><li>Credit-readiness, not credit</li><li>Why coffee, why now</li></ul>
-        </div>
-        <div class="note-group">
-          <h3><i class="square" style="background:var(--rust)"></i>Social enterprise design</h3>
-          <ul class="note-list"><li>Can social purpose pay for itself?</li><li>From Rumah Belajar Samagiya to Alfa Beta</li><li>Thirty cats, one budget</li><li>Building livelihoods for 50 women therapists</li></ul>
-        </div>
-      </div>
-    </section>
-    <section class="books" id="books" aria-labelledby="books-title">
-      <div class="wrap">
-        <p class="eyebrow">From the other desk</p>
-        <h2 id="books-title">Books &amp; writing</h2>
-        <p class="books-intro">Named for my grandmother Sela.<br />Viam facio; aliis prospicio.</p>
-        <div class="book-grid">
-          <article class="book"><a class="book-title" href="#contact">Malu Malu Kucing</a><p>On the cats nobody claims, and the shame we borrow from them.</p></article>
-          <article class="book"><a class="book-title" href="#contact">Tell Me Where It Hurts</a><p>Essays on care work — for animals, communities, and the systems meant to hold both.</p></article>
-          <article class="book"><a class="book-title" href="#contact">Kamus Kucing</a><p>A small, illustrated dictionary of cat behaviour, for people learning to read them.</p></article>
-          <article class="book"><a class="book-title" href="#contact">After the Last Loan</a><p>On Sangga Lentera Abadi, and what carries a community once the lending stops.</p></article>
-          <article class="book"><a class="book-title" href="#contact">The Arithmetic of Survival</a><p>On women, money, and the daily math of staying afloat.</p></article>
-          <article class="book"><a class="book-title" href="#contact">Sixty Seconds to Yourself</a><p>Small essays on rest and the women who rarely get enough of it, one villa visit at a time.</p></article>
-          <article class="book"><a class="book-title" href="#contact">Room to Become</a><p>On Rumah Belajar Samagiya, and what happens when children are given room to be creative.</p></article>
-        </div>
-      </div>
+    <section class="teaser-grid wrap" aria-label="Explore Selanotes">
+      <article class="teaser"><h2>About</h2><p>The experience, ideas, and conviction behind Selanotes.</p><a class="text-link" href="about.html">Read about Janne →</a></article>
+      <article class="teaser"><h2>What I do</h2><p>Work across sustainable commodities, inclusive finance, and social enterprise.</p><a class="text-link" href="work.html">Explore the work →</a></article>
+      <article class="teaser"><h2>Notes &amp; books</h2><p>Writing in progress and books shaped by policy, livelihoods, and care.</p><a class="text-link" href="notes.html">Browse writing →</a></article>
     </section>
   </main>
-  <footer class="wrap" id="contact"><span>Vitra Janne Siregar — Bogor, Indonesia</span><span>viam facio; aliis prospicio</span></footer>
+  <footer class="site-footer wrap"><span>Vitra Janne Siregar — Bogor, Indonesia</span><span>Viam facio; aliis prospicio</span></footer>
 </body>
 </html>
